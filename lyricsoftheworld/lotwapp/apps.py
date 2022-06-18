@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class LotwConfig(AppConfig):
+class LotwappConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'LOTW'
+    name = 'lotwapp'
