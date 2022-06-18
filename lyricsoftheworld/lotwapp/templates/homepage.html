@@ -23,7 +23,7 @@
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
+            <title>Lyrics of the World</title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -66,26 +66,26 @@
             
             .northAmerica {
               position: absolute;
-              top: 210px;
-              left: 365px;
+              top: 380px;
+              left: 625px;
             }
             
             .europe {
               position: absolute;
-              top: 190px;
-              right: 530px;
+              top: 360px;
+              right: 790px;
             }
 
             .asia {
               position: absolute;
-              top: 215px;
-              right: 400px;
+              top: 400px;
+              right: 650px;
             }
 
             .australia {
               position: absolute;
-              bottom: 150px;
-              right: 345px;
+              bottom: 335px;
+              right: 600px;
             }
             
             .africa {
@@ -94,20 +94,110 @@
               left: 50%;
               transform: translate(-50%, -40%);
             }
+            
+            .popup {
+
+              display: inline-block;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+            }
+
+            /* The actual popup */
+            .popup .popuptext {
+              visibility: hidden;
+              width: 160px;
+              background-color: #C4B0FD;
+              color: #fff;
+              text-align: center;
+              border-radius: 16px;
+              padding: 60px 0;
+              position: absolute;
+              z-index: 1;
+              bottom: 125%;
+              left: 50%;
+              margin-left: -20px;
+            }
+
+            /* Popup arrow */
+            .popup .popuptext::after {
+              content: "";
+
+              top: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: #C4B0FD transparent transparent transparent;
+            }
+
+            /* Toggle this class - hide and show the popup */
+            .popup .show {
+              visibility: visible;
+              -webkit-animation: fadeIn 1s;
+              animation: fadeIn 1s;
+            }
+
+            /* Add animation (fade in the popup) */
+            @-webkit-keyframes fadeIn {
+              from {opacity: 0;} 
+              to {opacity: 1;}
+            }
+
+            @keyframes fadeIn {
+              from {opacity: 0;}
+              to {opacity:1 ;}
+            }
             </style>
             </head>
             <body>
                         
             <div class="container">
-            <img src= "/static/images/location.png" style = "display: block; margin-left: auto; margin-right: auto; width: 50%;">
-              <div class="southAmerica"><a class="button" href="#popup1"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a></div> 
-              <div class="northAmerica"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></div>
-              <div class="europe"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></div>
-              <div class="asia"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></div>
-              <div class="australia"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></div>
-              <div class="africa"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></div>
+              <img src= "/static/images/location.png" style = "display: block; margin-left: auto; margin-right: auto; width: 50%;">
+
+              <div class="southAmerica popup" onclick="myFunction()"><a class="button" href="#popup"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup">
+                1. Vivir Mi Vida - Marc Anthony <br>
+                2. Guantanamera - Celia Cruz <br>
+                3. Si Llego a Besarte - Omara Portuondo <br>
+                4. En Barranquilla Me Quedo - Joe Arroyo <br>
+                5. Despacito - Luis Fonsi ft. Daddy Yankee <br><br>
+              <a class="button" href="#popup1" style="border-radius: 5px; background-color: white; padding: 5px;">Learn the language</a>
+              </span>
+              </div></div> 
+
+              <div class="northAmerica popup" onclick="myFunction()"><a class="button" href="#popup2"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup2">
+               1. Running up That Hill (Deal with God) - Kate Bush <br>
+               2. As It Was - Harry Styles <br>
+               3. About Damn Time - Lizzo <br>
+               4. I Like You - Post Malone ft. Doja Cat <br>
+               5. First Class - Jack Harlow <br><br>
+               <a class="button" href="#popup1" style="border-radius: 5px; background-color: white; padding: 5px;">Learn the language</a>
+              </span>
+              </div></div>
+
+              <div class="europe popup" onclick="myFunction()"><a class="button" href="#popup1"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup">A Simple Popup!</span>
+              
+              </div></div>
+              <div class="asia popup" onclick="myFunction()"><a class="button" href="#popup1"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup">A Simple Popup!</span>
+              
+              </div></div>
+              <div class="australia popup" onclick="myFunction()"><a class="button" href="#popup1"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup">A Simple Popup!</span>
+              
+              </div></div>
+              <div class="africa popup" onclick="myFunction()"><a class="button" href="#popup1"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup">A Simple Popup!</span>
+              
+              </div></div>
             </div>
 
+            <script>
+            // When the user clicks on div, open the popup
+            function myFunction() {
+              var popup = document.getElementById("myPopup");
+              popup.classList.toggle("show");
+            }
+            </script>
 
 
 
