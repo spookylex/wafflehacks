@@ -9,9 +9,9 @@
             html {
                 margin: 0;
                 padding: 0;
-                height: 90%;
+                height: 100%;
                 background: url("/static/images/bg.png");
-                background-size: 100% auto;
+                background-size: 120% auto;
                 color: white;
                 font-family: serif;
             }
@@ -59,12 +59,11 @@
                   box-sizing: border-box;
                }
                .first, .second, .third, .fourth, .fifth {
-                  float: left;
-                  width: 200px;
+                  width: 500px;
                   color: white;
                   padding: 10px;
-                  height: 500px;
-                  margin: 10px;
+                  height: 220px;
+                  margin: 20px;
                   text-align: center;
                }
                .first {
@@ -86,32 +85,121 @@
                .container:after {
                   clear: both;
                }
+               .row {
+                 display: flex;
+                }
+                .column {
+                    float: left;
+                    width: 50%;
+                    flex: 50%;
+                }
+
+                /* Clear floats after the columns */
+                .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
             </style>
         </head>
             <body>
             <h1 style="text-align: center; color: white;">Top 5 Songs in North America</h1><br><br>
-            <div class="container">
-                <div class="first">
-                <h1>Running up That Hill (Deal with God) - Kate Bush</h1>
-                </div>
 
-                <div class="second">
-                <h1>As It Was - Harry Styles</h1>
+            <div class="row" style="margin:auto;">
+                <div class="column first"> 
+                    <h1>Running up That Hill (Deal with God) - Kate Bush</h1>
                 </div>
+                <div class="column">
+                    <h3 style="margin: 20px; color: white;">
+                        [Chorus]<br>
+                        And if I only could <br>
+                        I'd make a deal with God <br>
+                        And I'd get him to swap our places <br>
+                        Be running up that road <br>
+                        Be running up that hill <br>
+                        Be running up that building <br>
+                        Say, if I only could, oh <br>
+                    </h3>
+            </div>
+              </div>
 
-                <div class="third">
+            <div class="row" style="margin:auto;">
+                <div class="column second"> 
+                   <h1>As It Was - Harry Styles</h1>
+                </div>
+                <div class="column">
+                    <h3 style="margin: 20px; color: white;">
+                        [Chorus]<br>
+                        In this world, it's just us<br>
+                        You know it's not the same as it was<br>
+                        In this world, it's just us<br>
+                        You know it's not the same as it was<br>
+                        As it was, as it was<br>
+                        You know it's not the same
+                    </h3><br>
+
+                </div>
+            </div>
+
+            <div class="row" style="margin:auto;">
+                <div class="column third"> 
                 <h1>About Damn Time - Lizzo</h1>
                 </div>
+                <div class="column">
+                    <h3 style="margin: 20px; color: white;">
+                        [Chorus]<br>
+                        Turn up the music, turn down the lights<br>
+                        I got a feelin' I'm gon' be alright<br>
+                        Okay (Okay), alright<br>
+                        It's about damn time (Time)<br>
+                        Turn up the music, let's celebrate (Alright)<br>
+                        I got a feelin' I'm gon' be okay<br>
+                        Okay (Okay), alright<br>
+                        It's about damn time<br>
+                    </h3><br>
 
-                <div class="fourth">
-                <h1>I Like You - Post Malone ft. Doja Cat</h1>
+                </div>
+            </div>
+
+                <div class="row" style="margin:auto;">
+                    <div class="column fourth"> 
+                    <h1>I Like You - Post Malone ft. Doja Cat</h1>
+                    </div>
+                    <div class="column">
+                        <h3 style="margin: 20px; color: white;">
+                            [Chorus]<br>
+                            Ooh, girl, I like you, I do (I do) <br>
+                            I wanna be your friend, go shoppin’ in a Benz (Woo)<br>
+                            I like you, I do (I do)<br>
+                            I'll hit you when I land, can you fit me in your plans?<br>
+                            I like you, I do (I do)<br>
+                            We went to bed in France, then we woke up in Japan<br>
+                            I like you, I do (Mm, mm, I do)<br>
+                        </h3><br>
+    
+                    </div>
                 </div>
 
-                <div class="fifth">
-                <h1>First Class - Jack Harlow </h1>
+                <div class="row" style="margin:auto;">
+                    <div class="column fifth"> 
+                    <h1>First Class - Jack Harlow </h1>
+                    </div>
+                    <div class="column">
+                        <h3 style="margin: 20px; color: white;">
+                            [Chorus]<br>
+                            I been a (G), throw up the (L), sex in the (A.M.), uh-huh <br>
+                            (O-R-O-U-S, yeah) <br>
+                            And I can put you in (First class, up in the sky), mm, mm <br>
+                            I can put you in (First class, up in the s—, up-up in the s—) <br>
+                        </h3><br>
+    
+                    </div>
                 </div>
 
             </div>
             </body>
+
+            
+
     </body>
 </html>
