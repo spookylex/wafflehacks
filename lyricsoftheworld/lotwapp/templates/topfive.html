@@ -15,6 +15,104 @@
                 color: white;
                 font-family: serif;
             }
+            .container {
+              position: relative;
+              text-align: center;
+              color: black;
+            }
+            
+            .southAmerica {
+              position: absolute;
+              bottom: 250px;
+              left: 385px;
+            }
+            
+            .northAmerica {
+              position: absolute;
+              top: 450px;
+              left: 550px;
+            }
+            
+            .europe {
+              position: absolute;
+              top: 425px;
+              right: 790px;
+            }
+
+            .asia {
+              position: absolute;
+              top: 450px;
+              right: 590px;
+            }
+
+            .australia {
+              position: absolute;
+              bottom: 225px;
+              right: 520px;
+            }
+            
+            .africa {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, 30%);
+            }
+            
+            .popup {
+
+              display: inline-block;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+            }
+
+            /* The actual popup */
+            .popup .popuptext {
+              visibility: hidden;
+              width: 250px;
+              background-color: #C4B0FD;
+              color: #fff;
+              text-align: center;
+              border-radius: 16px;
+              padding: 60px 0;
+              position: absolute;
+              z-index: 1;
+              bottom: 125%;
+              left: 50%;
+              margin-left: -20px;
+            }
+
+            /* Popup arrow */
+            .popup .popuptext::after {
+              content: "";
+
+              top: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: #C4B0FD transparent transparent transparent;
+            }
+
+            /* Toggle this class - hide and show the popup */
+            .popup .show {
+              visibility: visible;
+              -webkit-animation: fadeIn 1s;
+              animation: fadeIn 1s;
+            }
+
+            /* Add animation (fade in the popup) */
+            @-webkit-keyframes fadeIn {
+              from {opacity: 0;} 
+              to {opacity: 1;}
+            }
+
+            @keyframes fadeIn {
+              from {opacity: 0;}
+              to {opacity:1 ;}
+            }
         </style>
     </head>
     <body>
@@ -32,86 +130,28 @@
         <nav class="navbar navbar-light" style="background-color:white; color:black;">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'homepage' %}"></a>
+                    <li><a href="{% url 'homepage' %}">
                         <img src= "/static/images/HOME.png" style = "width:110px; padding-right: 50px; padding-bottom: 20px;"> 
-                    </li>
+                    </a></li>
                     <li style = "width: 100px;"></li>
-                    <li><a href="{% url 'homepage' %}"></a>
+                    <li><a href="{% url 'homepage' %}">
                         <img src= "/static/images/1.png" style = "width:80px; padding-top: 20px;" >
-                    </li>
-                    <li><a href="{% url 'homepage' %}"></a>
+                   </a> </li>
+                    <li><a href="topfive">
                         <img src= "/static/images/2.png" style = "width:120px; padding-top: 20px;" >
-                    </li>
-                    <li><a href="{% url 'homepage' %}"></a>
-                        <img src= "/static/images/3.png" style = "width:80px; padding-top: 20px;" >
-                    </li>
-                    </ul>
+                    </a></li>
+                </ul>
             </div>
         </nav>
-
-        <head>
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <style>
-               body {
-                  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-               }
-               * {
-                  box-sizing: border-box;
-               }
-               .first, .second, .third, .fourth, .fifth {
-                  float: left;
-                  width: 200px;
-                  color: white;
-                  padding: 10px;
-                  height: 500px;
-                  margin: 10px;
-                  text-align: center;
-               }
-               .first {
-                  background-color: tomato;
-               }
-               .second {
-                  background-color: teal;
-               }
-               .third {
-                  background-color: rgb(166, 71, 255);
-               }
-               .fourth {
-                  background-color: rgb(255, 71, 194);
-               }
-               .fifth {
-                  background-color: rgb(127, 157, 255);
-
-               }
-               .container:after {
-                  clear: both;
-               }
-            </style>
-        </head>
-            <body>
-            <h1 style="text-align: center; color: white;">Top 5 Songs in North America</h1><br><br>
-            <div class="container">
-                <div class="first">
-                <h1>Running up That Hill (Deal with God) - Kate Bush</h1>
-                </div>
-
-                <div class="second">
-                <h1>As It Was - Harry Styles</h1>
-                </div>
-
-                <div class="third">
-                <h1>About Damn Time - Lizzo</h1>
-                </div>
-
-                <div class="fourth">
-                <h1>I Like You - Post Malone ft. Doja Cat</h1>
-                </div>
-
-                <div class="fifth">
-                <h1>First Class - Jack Harlow </h1>
-                </div>
-
-            </div>
-            </body>
     </body>
+    </body>
+    </body>
+
+   <a href = "northamerica"> <img src= "/static/images/na.png" style = "width:30%; padding-top: 20px; padding-left: 50px;"> </a> 
+   <a href = "southamerica"><img src= "/static/images/sa.png" style = "width:30%; padding-top: 20px; padding-left: 50px;" ></a>   <br>
+   <a href = "africa"><img src= "/static/images/africa.png" style = "width:30%; padding-top: 20px; padding-left: 50px;" > </a>  
+   <a href = "europe"><img src= "/static/images/europe.png" style = "width:30%; padding-top: 20px; padding-left: 50px;" ></a>   <br>
+   <a href = "asia"><img src= "/static/images/asia.png" style = "width:30%; padding-top: 20px; padding-left: 50px;" ></a>   
+   <a href = "australia"><img src= "/static/images/aus.png" style = "width:30%; padding-top: 20px; padding-left: 50px;" > </a>  <br>
+
 </html>

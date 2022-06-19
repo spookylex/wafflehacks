@@ -9,9 +9,9 @@
             html {
                 margin: 0;
                 padding: 0;
-                height: 90%;
+                height: 100%;
                 background: url("/static/images/bg.png");
-                background-size: 100% auto;
+                background-size: 200% auto;
                 color: white;
                 font-family: serif;
             }
@@ -32,20 +32,17 @@
         <nav class="navbar navbar-light" style="background-color:white; color:black;">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'homepage' %}"></a>
+                    <li><a href="{% url 'homepage' %}">
                         <img src= "/static/images/HOME.png" style = "width:110px; padding-right: 50px; padding-bottom: 20px;"> 
-                    </li>
+                    </a></li>
                     <li style = "width: 100px;"></li>
-                    <li><a href="{% url 'homepage' %}"></a>
+                    <li><a href="{% url 'homepage' %}">
                         <img src= "/static/images/1.png" style = "width:80px; padding-top: 20px;" >
-                    </li>
-                    <li><a href="{% url 'homepage' %}"></a>
+                   </a> </li>
+                    <li><a href="topfive">
                         <img src= "/static/images/2.png" style = "width:120px; padding-top: 20px;" >
-                    </li>
-                    <li><a href="{% url 'homepage' %}"></a>
-                        <img src= "/static/images/3.png" style = "width:80px; padding-top: 20px;" >
-                    </li>
-                    </ul>
+                    </a></li>
+                </ul>
             </div>
         </nav>
 
@@ -59,12 +56,11 @@
                   box-sizing: border-box;
                }
                .first, .second, .third, .fourth, .fifth {
-                  float: left;
-                  width: 200px;
+                  width: 500px;
                   color: white;
                   padding: 10px;
-                  height: 500px;
-                  margin: 10px;
+                  height: 220px;
+                  margin: 20px;
                   text-align: center;
                }
                .first {
@@ -86,32 +82,213 @@
                .container:after {
                   clear: both;
                }
+               .row {
+                 display: flex;
+                }
+                .column {
+                    float: left;
+                    width: 50%;
+                    flex: 50%;
+                }
+
+                /* Clear floats after the columns */
+                .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+                .popup {
+                    position: relative;
+                    display: inline-block;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    }
+
+                    /* The actual popup */
+                    .popup .popuptext {
+                    visibility: hidden;
+                    width: 160px;
+                    background-color: #555;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 8px 0;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 125%;
+                    left: 50%;
+                    margin-left: -80px;
+                    }
+
+                    /* Popup arrow */
+                    .popup .popuptext::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: #555 transparent transparent transparent;
+                    }
+
+                    /* Toggle this class - hide and show the popup */
+                    .popup .show {
+                    visibility: visible;
+                    -webkit-animation: fadeIn 1s;
+                    animation: fadeIn 1s;
+                    }
+
+                    /* Add animation (fade in the popup) */
+                    @-webkit-keyframes fadeIn {
+                    from {opacity: 0;} 
+                    to {opacity: 1;}
+                    }
+
+                    @keyframes fadeIn {
+                    from {opacity: 0;}
+                    to {opacity:1 ;}
+                    }
             </style>
         </head>
+
             <body>
-            <h1 style="text-align: center; color: white;">Top 5 Songs in North America</h1><br><br>
-            <div class="container">
-                <div class="first">
-                <h1>Running up That Hill (Deal with God) - Kate Bush</h1>
+            <h1 style="text-align: center; color: white;">Top 5 Songs in Africa</h1><br><br>
+
+            <div class="row" style="margin:auto;">
+                <div class="column first"> 
+                    <h1>Quarantine – Wasafi ft. Diamond Platnumz, Rayvanny, Mbosso, Lava Lava</h1>
+                </div>
+                <div class="column">
+                    <h3 style="margin: 20px; color: white;">
+                        [Chorus]<br>
+                        Now Show Me Your Quarantine (Eeh!)<br>
+                        Quarantine (Ooh!)<br>
+                        Quarantine Moves Yes Quarantine<br>
+                        Now What's Your Quarantine (Uuuh)<br>
+                        Quarantine (Okey)<br>
+                        Quarantine Moves Yes Quarantine<br>
+                        On The Left, To The Right (Wee!)<br>
+                        One, Two, Three, Four, Then Five (Okey)<br>
+                        Nae Nae Thats Right (Wee!)<br>
+                        Do The Wacko Jacko Now Slide<br>
+                    </h3>
+            </div>
+              </div>
+
+            <div class="row" style="margin:auto;">
+                <div class="column second"> 
+                   <h1>Master KG – Jerusalema ft. Nomcebo</h1>
+                </div>
+                <div class="column">
+                    <h3 style="margin: 20px; color: white;">
+                        [Chorus]<br>
+                        Jerusalema ikhaya lami<br>
+                        Ngilondoloze<br>
+                        Uhambe nami<br>
+                        Zungangishiyi lana<br>
+                        Jerusalema ikhaya lami<br>
+                        Ngilondoloze<br>
+                        Uhambe nami<br>
+                        Zungangishiyi lana<br>
+                    </h3><br>
+
+                </div>
+            </div>
+
+            <div class="row" style="margin:auto;">
+                <div class="column third"> 
+                <h1>Woman - Rudeboy</h1>
+                </div>
+                <div class="column">
+                    <h3 style="margin: 20px; color: white;">
+                        [Chorus]<br>
+                        If you dey find this woman<br>
+                        Pretty woman<br>
+                        That perfect woman wey go dey by your side<br>
+                        That God-fearing woman<br>
+                        That kind of woman<br>
+                        Brother go build am yourself<br>
+                        If you dey find this woman<br>
+                        Pretty woman<br>
+                        That perfect woman wey go dey by your side<br>
+                        That God-fearing woman<br>
+                        That kind of woman<br>
+                        
+                    </h3><br>
+
+                </div>
+            </div>
+
+                <div class="row" style="margin:auto;">
+                    <div class="column fourth"> 
+                    <h1>Insecure - Sauti Sol</h1>
+                    </div>
+                    <div class="column">
+                        <h3 style="margin: 20px; color: white;">
+                            [Chorus]<br>
+                            But you’re insecure (Eeeh)<br>
+                            Woman, you’re insecure (Aaah)<br>
+                            Woman, you’re insecure (Eeeh)<br>
+                            And I’m insecure (Aaah)<br>
+
+                        </h3><br>
+    
+                    </div>
                 </div>
 
-                <div class="second">
-                <h1>As It Was - Harry Styles</h1>
-                </div>
+                <div class="row" style="margin:auto;">
+                    <div class="column fifth"> 
+                    <h1>Ladipoe – Know You Ft Simi
+                    </h1>
+                    </div>
+                    <div class="column">
+                        <h3 style="margin: 20px; color: white;">
+                            [Chorus]<br>
+                            I really wanna tell you how my day went<br>
+                            Really want to spend a weekend<br>
+                            I for show you this thing I’m feeling (ohh yeah)<br>
+                            But I don’t really know you that well<br>
 
-                <div class="third">
-                <h1>About Damn Time - Lizzo</h1>
-                </div>
-
-                <div class="fourth">
-                <h1>I Like You - Post Malone ft. Doja Cat</h1>
-                </div>
-
-                <div class="fifth">
-                <h1>First Class - Jack Harlow </h1>
+                        </h3><br>
+    
+                    </div>
                 </div>
 
             </div>
             </body>
+
+            <script>
+                // When the user clicks on div, open the popup
+                function myFunction() {
+                  var popup = document.getElementById("myPopup");
+                  popup.classList.toggle("show");
+                }
+                function myFunction1() {
+                  var popup = document.getElementById("myPopup1");
+                  popup.classList.toggle("show");
+                }
+                function myFunction2() {
+                  var popup = document.getElementById("myPopup2");
+                  popup.classList.toggle("show");
+                }
+                function myFunction3() {
+                  var popup = document.getElementById("myPopup3");
+                  popup.classList.toggle("show");
+                }
+                function myFunction4() {
+                  var popup = document.getElementById("myPopup4");
+                  popup.classList.toggle("show");
+                }
+                function myFunction5() {
+                  var popup = document.getElementById("myPopup5");
+                  popup.classList.toggle("show");
+                }
+                </script>
+            
+
     </body>
 </html>

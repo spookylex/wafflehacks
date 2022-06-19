@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <!-- <h1>PLEASE WORK</h1>-->
 
     {% load static %}
     <head>
@@ -9,9 +8,9 @@
             html {
                 margin: 0;
                 padding: 0;
-                height: 90%;
+                height: 100%;
                 background: url("/static/images/bg.png");
-                background-size: 100% auto;
+                background-size: 140% auto;
                 color: white;
                 font-family: serif;
             }
@@ -32,20 +31,17 @@
         <nav class="navbar navbar-light" style="background-color:white; color:black;">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'homepage' %}"></a>
+                    <li><a href="{% url 'homepage' %}">
                         <img src= "/static/images/HOME.png" style = "width:110px; padding-right: 50px; padding-bottom: 20px;"> 
-                    </li>
+                    </a></li>
                     <li style = "width: 100px;"></li>
-                    <li><a href="{% url 'homepage' %}"></a>
+                    <li><a href="{% url 'homepage' %}">
                         <img src= "/static/images/1.png" style = "width:80px; padding-top: 20px;" >
-                    </li>
-                    <li><a href="{% url 'homepage' %}"></a>
+                   </a> </li>
+                    <li><a href="topfive">
                         <img src= "/static/images/2.png" style = "width:120px; padding-top: 20px;" >
-                    </li>
-                    <li><a href="{% url 'homepage' %}"></a>
-                        <img src= "/static/images/3.png" style = "width:80px; padding-top: 20px;" >
-                    </li>
-                    </ul>
+                    </a></li>
+                </ul>
             </div>
         </nav>
 
@@ -59,12 +55,11 @@
                   box-sizing: border-box;
                }
                .first, .second, .third, .fourth, .fifth {
-                  float: left;
-                  width: 200px;
+                  width: 500px;
                   color: white;
                   padding: 10px;
-                  height: 500px;
-                  margin: 10px;
+                  height: 220px;
+                  margin: 20px;
                   text-align: center;
                }
                .first {
@@ -86,32 +81,206 @@
                .container:after {
                   clear: both;
                }
+               .row {
+                 display: flex;
+                }
+                .column {
+                    float: left;
+                    width: 50%;
+                    flex: 50%;
+                }
+
+                /* Clear floats after the columns */
+                .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+                .popup {
+                    position: relative;
+                    display: inline-block;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    }
+
+                    /* The actual popup */
+                    .popup .popuptext {
+                    visibility: hidden;
+                    width: 160px;
+                    background-color: #555;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 8px 0;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 125%;
+                    left: 50%;
+                    margin-left: -80px;
+                    }
+
+                    /* Popup arrow */
+                    .popup .popuptext::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: #555 transparent transparent transparent;
+                    }
+
+                    /* Toggle this class - hide and show the popup */
+                    .popup .show {
+                    visibility: visible;
+                    -webkit-animation: fadeIn 1s;
+                    animation: fadeIn 1s;
+                    }
+
+                    /* Add animation (fade in the popup) */
+                    @-webkit-keyframes fadeIn {
+                    from {opacity: 0;} 
+                    to {opacity: 1;}
+                    }
+
+                    @keyframes fadeIn {
+                    from {opacity: 0;}
+                    to {opacity:1 ;}
+                    }
             </style>
         </head>
+
             <body>
-            <h1 style="text-align: center; color: white;">Top 5 Songs in North America</h1><br><br>
-            <div class="container">
-                <div class="first">
-                <h1>Running up That Hill (Deal with God) - Kate Bush</h1>
+            <h1 style="text-align: center; color: white;">Top 5 Songs in Europe</h1><br><br>
+
+            <div class="row" style="margin:auto;">
+                <div class="column first"> 
+                    <h1>Satellite - Lena (Germany, 2010)</h1>
+                </div>
+                <div class="column">
+                    <h3 style="margin: 20px; color: white;">
+                        [Chorus]<br>
+                        Love, oh, love <br>
+                        I gotta tell you how I feel about you<br>
+                        'Cause I, oh, I<br>
+                        Can't go a minute without your love<br>
+                        Like a satellite, I'm in an orbit all the way around you<br>
+                        And I would fall out into the night<br>
+                        Can't go a minute without your love<br>
+                        
+                    </h3>
+            </div>
+              </div>
+
+            <div class="row" style="margin:auto;">
+                <div class="column second"> 
+                   <h1>Boom Bang a Bang - Lulu</h1>
+                </div>
+                <div class="column">
+                    <h3 style="margin: 20px; color: white;">
+                        [Chorus]<br>
+                        My heart goes<br>
+                        Boom bang-a-bang, boom bang-a-bang<br>
+                        When you are near<br>
+                        Boom bang-a-bang, boom bang-a-bang<br>
+                        Loud in my ear<br>
+                        Pounding away, pounding away<br>
+                        Won't you be mine?<br>
+                        Boom bang-a-bang-bang all the time<br>
+                        
+                    </h3><br>
+
+                </div>
+            </div>
+
+            <div class="row" style="margin:auto;">
+                <div class="column third"> 
+                <h1>Diva - Dana International (Israel, 1998)</h1>
+                </div>
+                <div class="column">
+                    <h3 style="margin: 20px; color: white;">
+                        [Chorus]<br>
+                        Diva nari'a<br>
+                        Diva Victoria<br>
+                        Afrodita<br>
+                        Viva la Diva<br>
+                        Viva Victoria<br>
+                        Cleopatra<br>               
+                    </h3><br>
+
+                </div>
+            </div>
+
+                <div class="row" style="margin:auto;">
+                    <div class="column fourth"> 
+                    <h1>Making Your Mind Up - Bucks Fizz</h1>
+                    </div>
+                    <div class="column">
+                        <h3 style="margin: 20px; color: white;">
+                            [Chorus]<br>
+                            Ooh, girl, I like you, I do (I do) <br>
+                            I wanna be your friend, go shoppin’ in a Benz (Woo)<br>
+                            I like you, I do (I do)<br>
+                            I'll hit you when I land, can you fit me in your plans?<br>
+                            I like you, I do (I do)<br>
+                            We went to bed in France, then we woke up in Japan<br>
+                            I like you, I do (Mm, mm, I do)<br>
+                        </h3><br>
+    
+                    </div>
                 </div>
 
-                <div class="second">
-                <h1>As It Was - Harry Styles</h1>
-                </div>
-
-                <div class="third">
-                <h1>About Damn Time - Lizzo</h1>
-                </div>
-
-                <div class="fourth">
-                <h1>I Like You - Post Malone ft. Doja Cat</h1>
-                </div>
-
-                <div class="fifth">
-                <h1>First Class - Jack Harlow </h1>
+                <div class="row" style="margin:auto;">
+                    <div class="column fifth"> 
+                    <h1>Congratulations - Cliff Richard</h1>
+                    </div>
+                    <div class="column">
+                        <h3 style="margin: 20px; color: white;">
+                            [Chorus]<br>
+                            Congratulations and celebrations <br>
+                            When I tell everyone that you're in love with me <br>
+                            Congratulations and jubilations<br>
+                            I want the world to know I'm happy as can be<br>                     
+                        </h3><br>
+    
+                    </div>
                 </div>
 
             </div>
             </body>
+
+            <script>
+                // When the user clicks on div, open the popup
+                function myFunction() {
+                  var popup = document.getElementById("myPopup");
+                  popup.classList.toggle("show");
+                }
+                function myFunction1() {
+                  var popup = document.getElementById("myPopup1");
+                  popup.classList.toggle("show");
+                }
+                function myFunction2() {
+                  var popup = document.getElementById("myPopup2");
+                  popup.classList.toggle("show");
+                }
+                function myFunction3() {
+                  var popup = document.getElementById("myPopup3");
+                  popup.classList.toggle("show");
+                }
+                function myFunction4() {
+                  var popup = document.getElementById("myPopup4");
+                  popup.classList.toggle("show");
+                }
+                function myFunction5() {
+                  var popup = document.getElementById("myPopup5");
+                  popup.classList.toggle("show");
+                }
+                </script>
+            
+
     </body>
 </html>

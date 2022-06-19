@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <!-- <h1>PLEASE WORK</h1>-->
 
     {% load static %}
     <head>
@@ -11,7 +10,7 @@
                 padding: 0;
                 height: 100%;
                 background: url("/static/images/bg.png");
-                background-size: 120% auto;
+                background-size: 150% auto;
                 color: white;
                 font-family: serif;
             }
@@ -32,20 +31,17 @@
         <nav class="navbar navbar-light" style="background-color:white; color:black;">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'homepage' %}"></a>
+                    <li><a href="{% url 'homepage' %}">
                         <img src= "/static/images/HOME.png" style = "width:110px; padding-right: 50px; padding-bottom: 20px;"> 
-                    </li>
+                    </a></li>
                     <li style = "width: 100px;"></li>
-                    <li><a href="{% url 'homepage' %}"></a>
+                    <li><a href="{% url 'homepage' %}">
                         <img src= "/static/images/1.png" style = "width:80px; padding-top: 20px;" >
-                    </li>
-                    <li><a href="{% url 'homepage' %}"></a>
+                   </a> </li>
+                    <li><a href="topfive">
                         <img src= "/static/images/2.png" style = "width:120px; padding-top: 20px;" >
-                    </li>
-                    <li><a href="{% url 'homepage' %}"></a>
-                        <img src= "/static/images/3.png" style = "width:80px; padding-top: 20px;" >
-                    </li>
-                    </ul>
+                    </a></li>
+                </ul>
             </div>
         </nav>
 
@@ -100,10 +96,67 @@
                     display: table;
                     clear: both;
                 }
+                .popup {
+                    position: relative;
+                    display: inline-block;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    }
+
+                    /* The actual popup */
+                    .popup .popuptext {
+                    visibility: hidden;
+                    width: 200px;
+                    background-color: #555;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 8px 0;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 125%;
+                    left: 50%;
+                    margin-left: -80px;
+                    }
+
+                    /* Popup arrow */
+                    .popup .popuptext::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: #555 transparent transparent transparent;
+                    }
+
+                    /* Toggle this class - hide and show the popup */
+                    .popup .show {
+                    visibility: visible;
+                    -webkit-animation: fadeIn 1s;
+                    animation: fadeIn 1s;
+                    }
+
+                    /* Add animation (fade in the popup) */
+                    @-webkit-keyframes fadeIn {
+                    from {opacity: 0;} 
+                    to {opacity: 1;}
+                    }
+
+                    @keyframes fadeIn {
+                    from {opacity: 0;}
+                    to {opacity:1 ;}
+                    }
             </style>
         </head>
+
             <body>
             <h1 style="text-align: center; color: white;">Top 5 Songs in North America</h1><br><br>
+            <h3 style="text-align: center; color: white;">Select the words in yellow for their meaning</h3><br><br>
 
             <div class="row" style="margin:auto;">
                 <div class="column first"> 
@@ -113,12 +166,13 @@
                     <h3 style="margin: 20px; color: white;">
                         [Chorus]<br>
                         And if I only could <br>
-                        I'd make a deal with God <br>
-                        And I'd get him to swap our places <br>
-                        Be running up that road <br>
-                        Be running up that hill <br>
-                        Be running up that building <br>
+                        I'd make a <div class="popup" onclick="myFunction1()" style="background-color: yellow; color: black;">deal</a><span class="popuptext" id="myPopup1">Deal - an agreement entered into by two or more parties for their mutual benefit, especially in a business or political context</span></div> with God <br>
+                        And I'd get him to <div class="popup" onclick="myFunction2()" style="background-color: yellow; color: black;">swap</a><span class="popuptext" id="myPopup2">Swap - take part in an exchange of</span></div>  our places <br>
+                        Be <div class="popup" onclick="myFunction3()" style="background-color: yellow; color: black;">running</a><span class="popuptext" id="myPopup3">Running - the action or movement of a runner</span></div>  up that <div class="popup" onclick="myFunction22()" style="background-color: yellow; color: black;">road</a><span class="popuptext" id="myPopup22">Road - a wide way leading from one place to another, especially one with a specially prepared surface which vehicles can use</span></div>  <br>
+                        Be running up that <div class="popup" onclick="myFunction4()" style="background-color: yellow; color: black;">hill</a><span class="popuptext" id="myPopup4">Hill - a naturally raised area of land, not as high or craggy as a mountain</span></div>  <br>
+                        Be running up that <div class="popup" onclick="myFunction5()" style="background-color: yellow; color: black;">building</a><span class="popuptext" id="myPopup5">Building - a structure with a roof and walls, such as a house, school, store, or factory</span></div>  <br>
                         Say, if I only could, oh <br>
+                        
                     </h3>
             </div>
               </div>
@@ -130,12 +184,12 @@
                 <div class="column">
                     <h3 style="margin: 20px; color: white;">
                         [Chorus]<br>
-                        In this world, it's just us<br>
-                        You know it's not the same as it was<br>
-                        In this world, it's just us<br>
-                        You know it's not the same as it was<br>
-                        As it was, as it was<br>
-                        You know it's not the same
+                        In this <div class="popup" onclick="myFunction6()" style="background-color: yellow; color: black;">world</a><span class="popuptext" id="myPopup6">World - noun, the earth, together with all of its countries, peoples, and natural features</span></div>, it's just us<br>
+                        You know it's not the <div class="popup" onclick="myFunction7()" style="background-color: yellow; color: black;">same</a><span class="popuptext" id="myPopup7">Same - adjective, identical; not different</span></div> as it was<br>
+                        In this world, it's <div class="popup" onclick="myFunction8()" style="background-color: yellow; color: black;">just</a><span class="popuptext" id="myPopup8">Just - adjective, exactly</span></div> us<br>
+                        You <div class="popup" onclick="myFunction9()" style="background-color: yellow; color: black;">know</a><span class="popuptext" id="myPopup9">Know - verb, be aware of through observation, inquiry, or information</span></div> it's not the same as it was<br>
+                        As it was, as it <div class="popup" onclick="myFunction10()" style="background-color: yellow; color: black;">was</a><span class="popuptext" id="myPopup10">Was - verb, past tense of be (to exist, past tense)</span></div> <br>
+                        You know it's <div class="popup" onclick="myFunction11()" style="background-color: yellow; color: black;">not</a><span class="popuptext" id="myPopup11">Not - adverb, used with an auxiliary verb or “be” to form the negative (“he would not say”)</span></div> the same
                     </h3><br>
 
                 </div>
@@ -148,11 +202,11 @@
                 <div class="column">
                     <h3 style="margin: 20px; color: white;">
                         [Chorus]<br>
-                        Turn up the music, turn down the lights<br>
+                        Turn up the <div class="popup" onclick="myFunction12()" style="background-color: yellow; color: black;">music</a><span class="popuptext" id="myPopup12">Music - noun, vocal or instrumental sounds (or both) combined in such a way as to produce beauty of form, harmony, and expression of emotion</span></div>, turn down the lights<br>
                         I got a feelin' I'm gon' be alright<br>
                         Okay (Okay), alright<br>
                         It's about damn time (Time)<br>
-                        Turn up the music, let's celebrate (Alright)<br>
+                        <div class="popup" onclick="myFunction13()" style="background-color: yellow; color: black;">Turn</a><span class="popuptext" id="myPopup13">Turn - verb, move (something) so that it is in a different position in relation to its surroundings or its previous position</span></div> let's <div class="popup" onclick="myFunction14()" style="background-color: yellow; color: black;">celebrate</a><span class="popuptext" id="myPopup14">Celebrate - verb, knowledge (a significant or happy day or event) with a social gathering or enjoyable activity</span></div> (Alright)<br>
                         I got a feelin' I'm gon' be okay<br>
                         Okay (Okay), alright<br>
                         It's about damn time<br>
@@ -169,11 +223,11 @@
                         <h3 style="margin: 20px; color: white;">
                             [Chorus]<br>
                             Ooh, girl, I like you, I do (I do) <br>
-                            I wanna be your friend, go shoppin’ in a Benz (Woo)<br>
+                            I wanna be your <div class="popup" onclick="myFunction15()" style="background-color: yellow; color: black;">friend</a><span class="popuptext" id="myPopup15">Friend - noun, a person whom one knows and with whom one has bond of mutual affection, typically exclusive of sexual or family relations</span></div>, go shoppin’ in a Benz (Woo)<br>
+                            I like you, I <div class="popup" onclick="myFunction16()" style="background-color: yellow; color: black;">do</a><span class="popuptext" id="myPopup16">Do - verb, achieve or complete</span></div> (I do)<br>
+                            I'll <div class="popup" onclick="myFunction17()" style="background-color: yellow; color: black;">hit</a><span class="popuptext" id="myPopup17">Hit -  verb, slang, reaching out to someone</span></div> you when I land, can you fit me in your plans?<br>
                             I like you, I do (I do)<br>
-                            I'll hit you when I land, can you fit me in your plans?<br>
-                            I like you, I do (I do)<br>
-                            We went to bed in France, then we woke up in Japan<br>
+                            We went to bed in France, then we <div class="popup" onclick="myFunction18()" style="background-color: yellow; color: black;">woke</a><span class="popuptext" id="myPopup18">Woke - verb, past of wake, emerge or cause to emerge from a state of sleep; stop sleeping</span></div> up in Japan<br>
                             I like you, I do (Mm, mm, I do)<br>
                         </h3><br>
     
@@ -187,10 +241,10 @@
                     <div class="column">
                         <h3 style="margin: 20px; color: white;">
                             [Chorus]<br>
-                            I been a (G), throw up the (L), sex in the (A.M.), uh-huh <br>
+                            I been a (G), <div class="popup" onclick="myFunction19()" style="background-color: yellow; color: black;">throw up</a><span class="popuptext" id="myPopup19">Throw up -  produce something and bring it to notice</span></div> the (L), sex in the (A.M.), uh-huh <br>
                             (O-R-O-U-S, yeah) <br>
-                            And I can put you in (First class, up in the sky), mm, mm <br>
-                            I can put you in (First class, up in the s—, up-up in the s—) <br>
+                            And I can put you in (First class, up in the <div class="popup" onclick="myFunction20()" style="background-color: yellow; color: black;">sky</a><span class="popuptext" id="myPopup20">Sky - the region of the atmosphere and outer space seen from the earth </span></div>), mm, mm <br>
+                            I can put you in (<div class="popup" onclick="myFunction21()" style="background-color: yellow; color: black;">First class</a><span class="popuptext" id="myPopup21">First class -  adjective, of the best quality or in the highest grade</span></div>, up in the s—, up-up in the s—) <br>
                         </h3><br>
     
                     </div>
@@ -199,6 +253,101 @@
             </div>
             </body>
 
+            <script>
+                // When the user clicks on div, open the popup
+                function myFunction() {
+                  var popup = document.getElementById("myPopup");
+                  popup.classList.toggle("show");
+                }
+                function myFunction1() {
+                  var popup = document.getElementById("myPopup1");
+                  popup.classList.toggle("show");
+                }
+                function myFunction2() {
+                  var popup = document.getElementById("myPopup2");
+                  popup.classList.toggle("show");
+                }
+                function myFunction3() {
+                  var popup = document.getElementById("myPopup3");
+                  popup.classList.toggle("show");
+                }
+                function myFunction4() {
+                  var popup = document.getElementById("myPopup4");
+                  popup.classList.toggle("show");
+                }
+                function myFunction5() {
+                  var popup = document.getElementById("myPopup5");
+                  popup.classList.toggle("show");
+                }
+                function myFunction6() {
+                  var popup = document.getElementById("myPopup6");
+                  popup.classList.toggle("show");
+                }
+                function myFunction7() {
+                  var popup = document.getElementById("myPopup7");
+                  popup.classList.toggle("show");
+                }
+                function myFunction8() {
+                  var popup = document.getElementById("myPopup8");
+                  popup.classList.toggle("show");
+                }
+                function myFunction9() {
+                  var popup = document.getElementById("myPopup9");
+                  popup.classList.toggle("show");
+                }
+                function myFunction10() {
+                  var popup = document.getElementById("myPopup10");
+                  popup.classList.toggle("show");
+                }
+                function myFunction11() {
+                  var popup = document.getElementById("myPopup11");
+                  popup.classList.toggle("show");
+                }
+                function myFunction12() {
+                  var popup = document.getElementById("myPopup12");
+                  popup.classList.toggle("show");
+                }
+                function myFunction13() {
+                  var popup = document.getElementById("myPopup13");
+                  popup.classList.toggle("show");
+                }
+                function myFunction14() {
+                  var popup = document.getElementById("myPopup14");
+                  popup.classList.toggle("show");
+                }
+                function myFunction15() {
+                  var popup = document.getElementById("myPopup15");
+                  popup.classList.toggle("show");
+                }
+                function myFunction16() {
+                  var popup = document.getElementById("myPopup16");
+                  popup.classList.toggle("show");
+                }
+                function myFunction17() {
+                  var popup = document.getElementById("myPopup17");
+                  popup.classList.toggle("show");
+                }
+                function myFunction18() {
+                  var popup = document.getElementById("myPopup18");
+                  popup.classList.toggle("show");
+                }
+                function myFunction19() {
+                  var popup = document.getElementById("myPopup19");
+                  popup.classList.toggle("show");
+                }
+                function myFunction20() {
+                  var popup = document.getElementById("myPopup20");
+                  popup.classList.toggle("show");
+                }
+                function myFunction21() {
+                  var popup = document.getElementById("myPopup21");
+                  popup.classList.toggle("show");
+                }
+                function myFunction22() {
+                  var popup = document.getElementById("myPopup22");
+                  popup.classList.toggle("show");
+                }
+                </script>
             
 
     </body>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <!-- <h1>PLEASE WORK</h1>-->
 
     {% load static %}
     <head>
@@ -9,9 +8,9 @@
             html {
                 margin: 0;
                 padding: 0;
-                height: 950%;
+                height: 100%;
                 background: url("/static/images/bg.png");
-                background-size: 100% auto;
+                background-size: 150% auto;
                 color: white;
                 font-family: serif;
             }
@@ -32,20 +31,17 @@
         <nav class="navbar navbar-light" style="background-color:white; color:black;">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'homepage' %}"></a>
+                    <li><a href="{% url 'homepage' %}">
                         <img src= "/static/images/HOME.png" style = "width:110px; padding-right: 50px; padding-bottom: 20px;"> 
-                    </li>
+                    </a></li>
                     <li style = "width: 100px;"></li>
-                    <li><a href="{% url 'homepage' %}"></a>
+                    <li><a href="{% url 'homepage' %}">
                         <img src= "/static/images/1.png" style = "width:80px; padding-top: 20px;" >
-                    </li>
-                    <li><a href="{% url 'homepage' %}"></a>
+                   </a> </li>
+                    <li><a href="topfive">
                         <img src= "/static/images/2.png" style = "width:120px; padding-top: 20px;" >
-                    </li>
-                    <li><a href="{% url 'homepage' %}"></a>
-                        <img src= "/static/images/3.png" style = "width:80px; padding-top: 20px;" >
-                    </li>
-                    </ul>
+                    </a></li>
+                </ul>
             </div>
         </nav>
 
@@ -59,12 +55,11 @@
                   box-sizing: border-box;
                }
                .first, .second, .third, .fourth, .fifth {
-                  float: left;
-                  width: 200px;
+                  width: 500px;
                   color: white;
                   padding: 10px;
-                  height: 500px;
-                  margin: 10px;
+                  height: 220px;
+                  margin: 20px;
                   text-align: center;
                }
                .first {
@@ -86,32 +81,285 @@
                .container:after {
                   clear: both;
                }
+               .row {
+                 display: flex;
+                }
+                .column {
+                    float: left;
+                    width: 50%;
+                    flex: 50%;
+                }
+
+                /* Clear floats after the columns */
+                .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+                .popup {
+                    position: relative;
+                    display: inline-block;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    }
+
+                    /* The actual popup */
+                    .popup .popuptext {
+                    visibility: hidden;
+                    width: 250px;
+                    background-color: #555;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 8px 0;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 125%;
+                    left: 50%;
+                    margin-left: -80px;
+                    }
+
+                    /* Popup arrow */
+                    .popup .popuptext::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: #555 transparent transparent transparent;
+                    }
+
+                    /* Toggle this class - hide and show the popup */
+                    .popup .show {
+                    visibility: visible;
+                    -webkit-animation: fadeIn 1s;
+                    animation: fadeIn 1s;
+                    }
+
+                    /* Add animation (fade in the popup) */
+                    @-webkit-keyframes fadeIn {
+                    from {opacity: 0;} 
+                    to {opacity: 1;}
+                    }
+
+                    @keyframes fadeIn {
+                    from {opacity: 0;}
+                    to {opacity:1 ;}
+                    }
             </style>
         </head>
+
             <body>
-            <h1 style="text-align: center; color: white;">Top 5 Songs in North America</h1><br><br>
-            <div class="container">
-                <div class="first">
-                <h1>Running up That Hill (Deal with God) - Kate Bush</h1>
+            <h1 style="text-align: center; color: white;">Top 5 Songs in South America</h1><br><br>
+            <h3 style="text-align: center; color: white;">Select the words in yellow for their meaning</h3><br><br>
+
+            <div class="row" style="margin:auto;">
+                <div class="column first"> 
+                    <h1>Vivir Mi Vida- Marc Anthony</h1>
+                </div>
+                <div class="column">
+                    <h3 style="margin: 20px; color: white;">
+                        [Chorus]<br>
+                        Voy a reír (¡Eso!), voy a <div class="popup" onclick="myFunction1()" style="background-color: yellow; color: black;">bailar</a><span class="popuptext" id="myPopup1">Bailar - dance - verb, move rhythmically to music, typically following a set sequence of steps</span></div><br>
+                        <div class="popup" onclick="myFunction2()" style="background-color: yellow; color: black;">Vivir</a><span class="popuptext" id="myPopup2">Vivir - live - verb, remain alive</span></div> mi vida la la la la<br>
+                        Voy a <div class="popup" onclick="myFunction3()" style="background-color: yellow; color: black;">reír</a><span class="popuptext" id="myPopup3">Reír - laugh - verb, make the spontaneous sounds and movements of the face and body that are the instinctive expressions of lively amusement and sometimes also of contempt or derision</span></div>, voy a gozar<br>
+                        Vivir mi <div class="popup" onclick="myFunction4()" style="background-color: yellow; color: black;">vida</a><span class="popuptext" id="myPopup4">Vida - life - noun, the existence of an individual human being or animal</span></div> la la la la<br>
+
+                    </h3>
+            </div>
+              </div>
+
+            <div class="row" style="margin:auto;">
+                <div class="column second"> 
+                   <h1>Buleria - David Bisbal</h1>
+                </div>
+                <div class="column">
+                    <h3 style="margin: 20px; color: white;">
+                        [Chorus]<br>
+                        <div class="popup" onclick="myFunction5()" style="background-color: yellow; color: black;">Bulería</a><span class="popuptext" id="myPopup5">Buleria - buleria - type of dance and music</span></div>, bulería, tan dentro del alma mía <br>
+                        Es la <div class="popup" onclick="myFunction6()" style="background-color: yellow; color: black;">sangre</a><span class="popuptext" id="myPopup6">Sangre - blood - noun, an internal bodily fluid</span></div> de la tierra en que nací (Que nací) <br>
+                        Bulería, bulería, más te quiero cada <div class="popup" onclick="myFunction7()" style="background-color: yellow; color: black;">día</a><span class="popuptext" id="myPopup7">Día - day - noun, a period of twenty-four hours as a unit of time, reckoned from one midnight to the next, corresponding to a rotation of the earth on its axis</span></div> <br>
+                        De ti <div class="popup" onclick="myFunction8()" style="background-color: yellow; color: black;">vivo</a><span class="popuptext" id="myPopup8">Vivo - life - noun, the existence of an individual human being or animal</span></div> enamorado desde que te vi <br>
+
+                    </h3><br>
+
+                </div>
+            </div>
+
+            <div class="row" style="margin:auto;">
+                <div class="column third"> 
+                <h1>Si Llego a Besarte - Omara Portuondo</h1>
+                </div>
+                <div class="column">
+                    <h3 style="margin: 20px; color: white;">
+                        [Chorus]<br>
+                        Y yo he <div class="popup" onclick="myFunction9()" style="background-color: yellow; color: black;">soñado</a><span class="popuptext" id="myPopup9">Soñado - dreamed of - verb, indulge in daydreams or fantasies about something greatly desired</span></div> anoche <br>
+                        Que me <div class="popup" onclick="myFunction10()" style="background-color: yellow; color: black;">querías</a><span class="popuptext" id="myPopup10">Querías -  to want - verb, have a desire to possess or do (something); wish for</span></div> <br>
+                        Y aunque <div class="popup" onclick="myFunction11()" style="background-color: yellow; color: black;">despues</a><span class="popuptext" id="myPopup11">Despues - after - preposition, in the time following (an event or another period of time)</span></div> me muera <br>
+                        Quiero <div class="popup" onclick="myFunction12()" style="background-color: yellow; color: black;">besarte</a><span class="popuptext" id="myPopup12">Besarte - kiss - verb, touch with the lips as a sign of love, reverence, or greeting</span></div> <br>
+
+                    </h3><br>
+
+                </div>
+            </div>
+
+                <div class="row" style="margin:auto;">
+                    <div class="column fourth"> 
+                    <h1>En Barranquilla Me Quedo - Joe Arroyo</h1>
+                    </div>
+                    <div class="column">
+                        <h3 style="margin: 20px; color: white;">
+                            [Chorus]<br>
+                            (En Barranquilla me quedo, en Barranquilla me quedo) <br>
+                            En Barranquilla me <div class="popup" onclick="myFunction13()" style="background-color: yellow; color: black;">quedo</a><span class="popuptext" id="myPopup13">Quedo - quiet - adjective, silent</span></div> <br>
+                            (En Barranquilla me quedo) <br>
+                            <div class="popup" onclick="myFunction14()" style="background-color: yellow; color: black;">Me</a><span class="popuptext" id="myPopup14">Me - me, myself - pronoun, to me, for me</span></div> quedo, me quedo, me quedo, me quedo, me quedo <br>
+                            Viviendo a lo <div class="popup" onclick="myFunction15()" style="background-color: yellow; color: black;">ñero</a><span class="popuptext" id="myPopup15">ñero - stupid - adjective, having or showing a great lack of intelligence or common sense</span></div> <br>
+                            (En Barranquilla me quedo) <br>
+                            Eh, yo te lo juro y no soy <div class="popup" onclick="myFunction16()" style="background-color: yellow; color: black;">cañero</a><span class="popuptext" id="myPopup16">Cañero - sugarcane - noun</span></div>, bebé <br>
+                            (En Barranquilla me quedo) <br>
+                            En la <div class="popup" onclick="myFunction17()" style="background-color: yellow; color: black;">arenosa</a><span class="popuptext" id="myPopup17">Arenosa - sandy - adjective</span></div> me quedo <br>
+                            (En Barranquilla me quedo) <br>
+
+                        </h3><br>
+    
+                    </div>
                 </div>
 
-                <div class="second">
-                <h1>As It Was - Harry Styles</h1>
-                </div>
+                <div class="row" style="margin:auto;">
+                    <div class="column fifth"> 
+                    <h1>Despacito - Luis Fonsi ft. Daddy Yankee</h1>
+                    </div>
+                    <div class="column">
+                        <h3 style="margin: 20px; color: white;">
+                            [Chorus]<br>
+                            <div class="popup" onclick="myFunction18()" style="background-color: yellow; color: black;">Despacito</a><span class="popuptext" id="myPopup18">Despacito - slowly - adverb, at a slow speed, not quickly</span></div> <br>
+                            Quiero <div class="popup" onclick="myFunction19()" style="background-color: yellow; color: black;">respirar</a><span class="popuptext" id="myPopup19">Respirar - to breathe - verb, take air into the lungs</span></div> tu cuello despacito (Yo') <br>
+                            Deja que te <div class="popup" onclick="myFunction20()" style="background-color: yellow; color: black;">diga</a><span class="popuptext" id="myPopup20">Diga - to say - verb, utter words so as to convey information, an opinion, a feeling or intention, or an instruction</span></div> cosas al oído (Yo') <br>
+                            Para que te acuerdes si no estás <div class="popup" onclick="myFunction21()" style="background-color: yellow; color: black;">conmigo</a><span class="popuptext" id="myPopup21">Conmigo - with me</span></div> (Plo, plo) <br>
+                            Despacito (¡Plo!) <br>
+                            Quiero <div class="popup" onclick="myFunction22()" style="background-color: yellow; color: black;">desnudarte</a><span class="popuptext" id="myPopup22">Desnudarte - to undress - verb, to remove the clothes from</span></div> a besos despacito (Yeah-eh) <br>
+                            Firmar las <div class="popup" onclick="myFunction23()" style="background-color: yellow; color: black;">paredes</a><span class="popuptext" id="myPopup23">Paredes - walls - architecture</span></div> de tu laberinto <br>
+                            Y hacer de tu <div class="popup" onclick="myFunction24()" style="background-color: yellow; color: black;">cuerpo</a><span class="popuptext" id="myPopup24">Cuerpo - body - noun, the physical structure of a person or an animal, including the bones, flesh, and organs</span></div>  todo un manuscrito <br>
+                            (Sube, sube, sube, sube, sube) <br>
 
-                <div class="third">
-                <h1>About Damn Time - Lizzo</h1>
-                </div>
-
-                <div class="fourth">
-                <h1>I Like You - Post Malone ft. Doja Cat</h1>
-                </div>
-
-                <div class="fifth">
-                <h1>First Class - Jack Harlow </h1>
+                        </h3><br>
+    
+                    </div>
                 </div>
 
             </div>
             </body>
+
+            <script>
+                // When the user clicks on div, open the popup
+                function myFunction() {
+                  var popup = document.getElementById("myPopup");
+                  popup.classList.toggle("show");
+                }
+                function myFunction1() {
+                  var popup = document.getElementById("myPopup1");
+                  popup.classList.toggle("show");
+                }
+                function myFunction2() {
+                  var popup = document.getElementById("myPopup2");
+                  popup.classList.toggle("show");
+                }
+                function myFunction3() {
+                  var popup = document.getElementById("myPopup3");
+                  popup.classList.toggle("show");
+                }
+                function myFunction4() {
+                  var popup = document.getElementById("myPopup4");
+                  popup.classList.toggle("show");
+                }
+                function myFunction5() {
+                  var popup = document.getElementById("myPopup5");
+                  popup.classList.toggle("show");
+                }
+                function myFunction6() {
+                  var popup = document.getElementById("myPopup6");
+                  popup.classList.toggle("show");
+                }
+                function myFunction7() {
+                  var popup = document.getElementById("myPopup7");
+                  popup.classList.toggle("show");
+                }
+                function myFunction8() {
+                  var popup = document.getElementById("myPopup8");
+                  popup.classList.toggle("show");
+                }
+                function myFunction9() {
+                  var popup = document.getElementById("myPopup9");
+                  popup.classList.toggle("show");
+                }
+                function myFunction10() {
+                  var popup = document.getElementById("myPopup10");
+                  popup.classList.toggle("show");
+                }
+                function myFunction11() {
+                  var popup = document.getElementById("myPopup11");
+                  popup.classList.toggle("show");
+                }
+                function myFunction12() {
+                  var popup = document.getElementById("myPopup12");
+                  popup.classList.toggle("show");
+                }
+                function myFunction13() {
+                  var popup = document.getElementById("myPopup13");
+                  popup.classList.toggle("show");
+                }
+                function myFunction14() {
+                  var popup = document.getElementById("myPopup14");
+                  popup.classList.toggle("show");
+                }
+                function myFunction15() {
+                  var popup = document.getElementById("myPopup15");
+                  popup.classList.toggle("show");
+                }
+                function myFunction16() {
+                  var popup = document.getElementById("myPopup16");
+                  popup.classList.toggle("show");
+                }
+                function myFunction17() {
+                  var popup = document.getElementById("myPopup17");
+                  popup.classList.toggle("show");
+                }
+                function myFunction18() {
+                  var popup = document.getElementById("myPopup18");
+                  popup.classList.toggle("show");
+                }
+                function myFunction19() {
+                  var popup = document.getElementById("myPopup19");
+                  popup.classList.toggle("show");
+                }
+                function myFunction20() {
+                  var popup = document.getElementById("myPopup20");
+                  popup.classList.toggle("show");
+                }
+                function myFunction21() {
+                  var popup = document.getElementById("myPopup21");
+                  popup.classList.toggle("show");
+                }
+                function myFunction22() {
+                  var popup = document.getElementById("myPopup22");
+                  popup.classList.toggle("show");
+                }
+                function myFunction23() {
+                  var popup = document.getElementById("myPopup23");
+                  popup.classList.toggle("show");
+                }
+                function myFunction24() {
+                  var popup = document.getElementById("myPopup24");
+                  popup.classList.toggle("show");
+                }
+                </script>
+            
+
     </body>
 </html>
