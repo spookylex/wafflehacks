@@ -15,43 +15,6 @@
                 color: white;
                 font-family: serif;
             }
-        
-        </style>
-    </head>
-    <body>
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Lyrics of the World</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-            
-        </head>
-        <nav class="navbar navbar-light" style="background-color:white; color:black;">
-            <div class="container-fluid">
-                <ul class="nav navbar-nav">
-                    <li><a href="{% url 'homepage' %}"></a>
-                        <img src= "/static/images/HOME.png" style = "width:150px; padding-right: 50px; padding-bottom: 20px;"> 
-                    </li>
-                    <li style = "width: 100px;"></li>
-                    <li><a href="{% url 'homepage' %}"></a>
-                        <img src= "/static/images/1.png" style = "width:100px; padding-top: 40px;" >
-                    </li>
-                    <li><a href="{% url 'homepage' %}"></a>
-                        <img src= "/static/images/2.png" style = "width:150px; padding-top: 40px;" >
-                    </li>
-                    <li><a href="{% url 'homepage' %}"></a>
-                        <img src= "/static/images/3.png" style = "width:100px; padding-top: 40px;" >
-                    </li>
-                    </ul>
-            </div>
-        </nav>
-
-
-        <style>
             .container {
               position: relative;
               text-align: center;
@@ -60,39 +23,39 @@
             
             .southAmerica {
               position: absolute;
-              bottom: 180px;
-              left: 425px;
+              bottom: 250px;
+              left: 385px;
             }
             
             .northAmerica {
               position: absolute;
-              top: 380px;
-              left: 625px;
+              top: 450px;
+              left: 550px;
             }
             
             .europe {
               position: absolute;
-              top: 360px;
+              top: 425px;
               right: 790px;
             }
 
             .asia {
               position: absolute;
-              top: 400px;
-              right: 650px;
+              top: 450px;
+              right: 590px;
             }
 
             .australia {
               position: absolute;
-              bottom: 335px;
-              right: 600px;
+              bottom: 225px;
+              right: 520px;
             }
             
             .africa {
               position: absolute;
               top: 50%;
               left: 50%;
-              transform: translate(-50%, -40%);
+              transform: translate(-50%, 30%);
             }
             
             .popup {
@@ -108,7 +71,7 @@
             /* The actual popup */
             .popup .popuptext {
               visibility: hidden;
-              width: 160px;
+              width: 250px;
               background-color: #C4B0FD;
               color: #fff;
               text-align: center;
@@ -150,46 +113,105 @@
               from {opacity: 0;}
               to {opacity:1 ;}
             }
-            </style>
+        </style>
+    </head>
+    <body>
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Lyrics of the World</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            
+        </head>
+        <nav class="navbar navbar-light" style="background-color:white; color:black;">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'homepage' %}"></a>
+                        <img src= "/static/images/HOME.png" style = "width:110px; padding-right: 50px; padding-bottom: 20px;"> 
+                    </li>
+                    <li style = "width: 100px;"></li>
+                    <li><a href="{% url 'homepage' %}"></a>
+                        <img src= "/static/images/1.png" style = "width:80px; padding-top: 20px;" >
+                    </li>
+                    <li><a href="{% url 'homepage' %}"></a>
+                        <img src= "/static/images/2.png" style = "width:120px; padding-top: 20px;" >
+                    </li>
+                    <li><a href="{% url 'homepage' %}"></a>
+                        <img src= "/static/images/3.png" style = "width:80px; padding-top: 20px;" >
+                    </li>
+                    </ul>
+            </div>
+        </nav>
+
             </head>
             <body>
                         
             <div class="container">
-              <img src= "/static/images/location.png" style = "display: block; margin-left: auto; margin-right: auto; width: 50%;">
-
+              <img src= "/static/images/location.png" style = "display: block; margin-left: auto; margin-right: auto; width: 70%;">
+              
               <div class="southAmerica popup" onclick="myFunction()"><a class="button" href="#popup"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup">
                 1. Vivir Mi Vida - Marc Anthony <br>
                 2. Guantanamera - Celia Cruz <br>
                 3. Si Llego a Besarte - Omara Portuondo <br>
                 4. En Barranquilla Me Quedo - Joe Arroyo <br>
                 5. Despacito - Luis Fonsi ft. Daddy Yankee <br><br>
-              <a class="button" href="#popup1" style="border-radius: 5px; background-color: white; padding: 5px;">Learn the language</a>
+              <a class="button" href="southamerica" style="border-radius: 5px; background-color: white; padding: 5px;">Learn the language</a>
               </span>
-              </div></div> 
+              </div> </div>
 
-              <div class="northAmerica popup" onclick="myFunction()"><a class="button" href="#popup2"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup2">
-               1. Running up That Hill (Deal with God) - Kate Bush <br>
-               2. As It Was - Harry Styles <br>
-               3. About Damn Time - Lizzo <br>
-               4. I Like You - Post Malone ft. Doja Cat <br>
-               5. First Class - Jack Harlow <br><br>
-               <a class="button" href="#popup1" style="border-radius: 5px; background-color: white; padding: 5px;">Learn the language</a>
-              </span>
-              </div></div>
+              <div class="northAmerica popup" onclick="myFunction1()"><a class="button" href="#popup1"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup1">
+                1. Running up That Hill (Deal with God) - Kate Bush <br>
+                2. As It Was - Harry Styles <br>
+                3. About Damn Time - Lizzo <br>
+                4. I Like You - Post Malone ft. Doja Cat <br>
+                5. First Class - Jack Harlow <br><br>
+               <a class="button" href="northamerica" style="border-radius: 5px; background-color: white; padding: 5px;">Learn the language</a>
+              </span></div>
 
-              <div class="europe popup" onclick="myFunction()"><a class="button" href="#popup1"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup">A Simple Popup!</span>
-              
-              </div></div>
-              <div class="asia popup" onclick="myFunction()"><a class="button" href="#popup1"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup">A Simple Popup!</span>
-              
-              </div></div>
-              <div class="australia popup" onclick="myFunction()"><a class="button" href="#popup1"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup">A Simple Popup!</span>
-              
-              </div></div>
-              <div class="africa popup" onclick="myFunction()"><a class="button" href="#popup1"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup">A Simple Popup!</span>
-              
-              </div></div>
-            </div>
+              <div class="europe popup" onclick="myFunction2()"><a class="button" href="#popup2"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup2">
+                1. Satellite - Lena (Germany, 2010) <br>
+                2. Boom Bang a Bang - Lulu (UK, 1969) <br>
+                3. Diva - Dana International (Israel, 1998) <br>
+                4. Making Your Mind Up - Bucks Fizz  (UK, 1981) <br>
+                5. Congratulations - Cliff Richard (UK, 1968) <br> <br>
+                <a class="button" href="europe" style="border-radius: 5px; background-color: white; padding: 5px;">Learn the language</a>
+
+              </span></div>
+
+              <div class="asia popup" onclick="myFunction3()"><a class="button" href="#popup3"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup3">
+                1. ドライフラワ (Dry Flowers) - Yuuri (優里) <br>
+                2.  群青 (Gunjou) - YOASOBI <br>
+                3. 水 (Water) - Lay <br>
+                4. LOVE - Monsta X <br>
+                5.  봄날 (Spring Day) - BTS <br> <br>
+                <a class="button" href="asia" style="border-radius: 5px; background-color: white; padding: 5px;">Learn the language</a>
+
+              </span></div>
+
+              <div class="australia popup" onclick="myFunction4()"><a class="button" href="#popup4"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup4">
+                1. You're The Voice – John Farnham  <br>
+                2. Prisoner Of Society – The Living End <br>
+                3. Great Southern Land – Icehouse <br>
+                4. Slice of heaven - Dave Dobbyn <br>
+                5. Don't dream it's over - Crowded House <br> <br>
+                <a class="button" href="australia" style="border-radius: 5px; background-color: white; padding: 5px;">Learn the language</a>
+
+              </span></div>
+
+              <div class="africa popup" onclick="myFunction5()"><a class="button" href="#popup5"><img src= "/static/images/HOME (3).png" style = "width: 100px;"></a><span class="popuptext" id="myPopup5">
+                1. Quarantine – Wasafi ft. Diamond Platnumz, Rayvanny, Mbosso, Lava Lava <br>
+                2. Master KG – Jerusalema ft. Nomcebo <br>
+                3. Rudeboy – Woman <br>
+                4. Sauti Sol – Insecure <br>
+                5. Ladipoe – Know You Ft Simi <br> <br>
+               <a class="button" href="africa" style="border-radius: 5px; background-color: white; padding: 5px;">Learn the language</a>
+
+              </span></div>
+
 
             <script>
             // When the user clicks on div, open the popup
@@ -197,11 +219,27 @@
               var popup = document.getElementById("myPopup");
               popup.classList.toggle("show");
             }
+            function myFunction1() {
+              var popup = document.getElementById("myPopup1");
+              popup.classList.toggle("show");
+            }
+            function myFunction2() {
+              var popup = document.getElementById("myPopup2");
+              popup.classList.toggle("show");
+            }
+            function myFunction3() {
+              var popup = document.getElementById("myPopup3");
+              popup.classList.toggle("show");
+            }
+            function myFunction4() {
+              var popup = document.getElementById("myPopup4");
+              popup.classList.toggle("show");
+            }
+            function myFunction5() {
+              var popup = document.getElementById("myPopup5");
+              popup.classList.toggle("show");
+            }
             </script>
-
-
-
-
 
     </body>
 </html>

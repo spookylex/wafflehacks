@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <!-- <h1>PLEASE WORK</h1>-->
+
+    {% load static %}
+    <head>
+        <style>
+        body,
+            html {
+                margin: 0;
+                padding: 0;
+                height: 90%;
+                background: url("/static/images/bg.png");
+                background-size: 100% auto;
+                color: white;
+                font-family: serif;
+            }
+        </style>
+    </head>
+    <body>
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Lyrics of the World</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            
+        </head>
+        <nav class="navbar navbar-light" style="background-color:white; color:black;">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'homepage' %}"></a>
+                        <img src= "/static/images/HOME.png" style = "width:110px; padding-right: 50px; padding-bottom: 20px;"> 
+                    </li>
+                    <li style = "width: 100px;"></li>
+                    <li><a href="{% url 'homepage' %}"></a>
+                        <img src= "/static/images/1.png" style = "width:80px; padding-top: 20px;" >
+                    </li>
+                    <li><a href="{% url 'homepage' %}"></a>
+                        <img src= "/static/images/2.png" style = "width:120px; padding-top: 20px;" >
+                    </li>
+                    <li><a href="{% url 'homepage' %}"></a>
+                        <img src= "/static/images/3.png" style = "width:80px; padding-top: 20px;" >
+                    </li>
+                    </ul>
+            </div>
+        </nav>
+
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <style>
+               body {
+                  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+               }
+               * {
+                  box-sizing: border-box;
+               }
+               .first, .second, .third, .fourth, .fifth {
+                  float: left;
+                  width: 200px;
+                  color: white;
+                  padding: 10px;
+                  height: 500px;
+                  margin: 10px;
+                  text-align: center;
+               }
+               .first {
+                  background-color: tomato;
+               }
+               .second {
+                  background-color: teal;
+               }
+               .third {
+                  background-color: rgb(166, 71, 255);
+               }
+               .fourth {
+                  background-color: rgb(255, 71, 194);
+               }
+               .fifth {
+                  background-color: rgb(127, 157, 255);
+
+               }
+               .container:after {
+                  clear: both;
+               }
+            </style>
+        </head>
+            <body>
+            <h1 style="text-align: center; color: white;">Top 5 Songs in North America</h1><br><br>
+            <div class="container">
+                <div class="first">
+                <h1>Running up That Hill (Deal with God) - Kate Bush</h1>
+                </div>
+
+                <div class="second">
+                <h1>As It Was - Harry Styles</h1>
+                </div>
+
+                <div class="third">
+                <h1>About Damn Time - Lizzo</h1>
+                </div>
+
+                <div class="fourth">
+                <h1>I Like You - Post Malone ft. Doja Cat</h1>
+                </div>
+
+                <div class="fifth">
+                <h1>First Class - Jack Harlow </h1>
+                </div>
+
+            </div>
+            </body>
+    </body>
+</html>
